@@ -1,14 +1,17 @@
 package com.lxkj.store.Adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.lxkj.store.R;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -20,10 +23,16 @@ import java.util.Map;
 public class ContriAdapter extends RecyclerView.Adapter<ContriAdapter.MyHolder> {
     private Context context;
     private List<Map<String, Object>> list;
+    private List<Boolean> ischeck;//控件是否被点击
+
 
     public ContriAdapter(Context context, List<Map<String, Object>> list) {
         this.context = context;
         this.list = list;
+        ischeck = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            ischeck.add(false);
+        }
 
     }
 
@@ -34,7 +43,31 @@ public class ContriAdapter extends RecyclerView.Adapter<ContriAdapter.MyHolder> 
     }
 
     @Override
-    public void onBindViewHolder(ContriAdapter.MyHolder holder, final int position) {
+    public void onBindViewHolder(final ContriAdapter.MyHolder holder, final int position) {
+
+//        ischeck.set(0,true);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onItemClickListener.OnItemClickListener(position);
+                for(int i = 0; i <ischeck.size();i++){
+                    ischeck.set(i,false);
+                }
+                ischeck.set(position,true);
+                notifyDataSetChanged();
+
+
+
+            }
+        });
+        //记录要更改属性的控件
+        holder.itemView.setTag(holder.ve_slider);
+        //6、判断改变属性
+        if(ischeck.get(position)){
+            holder.ve_slider.setBackgroundColor(Color.parseColor("#ffffff"));
+        }else{
+            holder.ve_slider.setBackgroundColor(Color.parseColor("#ff0000"));
+        }
 
     }
 
@@ -50,7 +83,7 @@ public class ContriAdapter extends RecyclerView.Adapter<ContriAdapter.MyHolder> 
 
 
     public class MyHolder extends RecyclerView.ViewHolder {
-        View ve_slider;
+        TextView ve_slider;
         public MyHolder(View itemView) {
             super(itemView);
             ve_slider = itemView.findViewById(R.id.ve_slider);
