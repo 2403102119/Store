@@ -223,6 +223,10 @@ public class App extends Application {
             });
         }
     }
+    /**获取上下文*/
+    public static Context getApplication() {
+        return app;
+    }
 
     /**
      * @param activity 作用说明 ：添加一个activity到管理里
