@@ -78,7 +78,6 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
             @Override
             public void OnItemClickListener(int firstPosition) {
 
-
             }
 
         });
@@ -136,12 +135,12 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
         list_path.add("http://ww4.sinaimg.cn/large/006uZZy8jw1faic259ohaj30ci08c74r.jpg");
         list_path.add("http://ww4.sinaimg.cn/large/006uZZy8jw1faic2b16zuj30ci08cwf4.jpg");
         list_path.add("http://ww4.sinaimg.cn/large/006uZZy8jw1faic2e7vsaj30ci08cglz.jpg");
-         list_title.add("好好学习");
-         list_title.add("好好学习");
-         list_title.add("好好学习");
-         list_title.add("好好学习");
+        list_title.add("好好学习");
+        list_title.add("好好学习");
+        list_title.add("好好学习");
+        list_title.add("好好学习");
         //设置内置样式，共有六种可以点入方法内逐一体验使用。
-        banner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR_TITLE_INSIDE);
+        banner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR);
         //设置图片加载器，图片加载器在下方
         banner.setImageLoader(new MyLoader());
         //设置图片网址或地址的集合
@@ -184,7 +183,6 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     @Override
     public void onResume() {
         super.onResume();
-//        home_page();
     }
 
     @Override

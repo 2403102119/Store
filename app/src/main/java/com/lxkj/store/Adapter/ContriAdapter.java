@@ -56,13 +56,11 @@ public class ContriAdapter extends RecyclerView.Adapter<ContriAdapter.MyHolder> 
                 ischeck.set(position,true);
                 notifyDataSetChanged();
 
-
-
             }
         });
         //记录要更改属性的控件
         holder.itemView.setTag(holder.ve_slider);
-        //6、判断改变属性
+        //判断改变属性
         if(ischeck.get(position)){
             holder.ve_slider.setBackgroundColor(Color.parseColor("#ffffff"));
         }else{

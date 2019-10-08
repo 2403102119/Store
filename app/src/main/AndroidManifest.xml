@@ -43,7 +43,6 @@
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
 
-
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -55,7 +54,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:windowSoftInputMode="adjustPan" >
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -65,6 +64,12 @@
         <activity
             android:name=".Activity.LoginActivity"
             android:launchMode="singleTask" />
+        <activity android:name=".Activity.MessageActivity" />
+        <activity android:name=".Activity.SetActivity" />
+        <activity android:name=".Activity.PersonalActivity" />
+        <activity android:name=".Activity.ProductActivity" />
+        <activity android:name=".Activity.Payment_successActivity" />
+        <activity android:name=".Activity.GiftActivity"></activity>
     </application>
 
 </manifest>
